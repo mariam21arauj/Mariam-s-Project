@@ -1,0 +1,559 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-image: linear-gradient(to top, #00f2fe, #4facfe);
+    clip-path: inset(47% 0 0 0);
+    z-index: -1;
+    height: 100%;
+}
+
+
+
+
+/*CSS for main container*/
+.maincontainer {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.maincontainer::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: rgb(37, 29, 29);
+    clip-path: inset(0 70% 0 0);
+    z-index: -1;
+    height: 100%;
+}
+
+
+
+
+/*CSS for primary container*/
+
+.primarycontainerpresentation {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.presentationcard {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.presentationcard:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 270px;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to top, #00f2fe, #4facfe);
+    clip-path: circle(400px at 50% -48.5%);
+}
+
+.presentationheader {
+    position: relative;
+    height: 265px;
+}
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: url("../img/Mariam.jpg") no-repeat center / cover;
+    border: 4px solid #00d8fe;
+    margin-bottom: 2px;
+    overflow: hidden;
+
+}
+
+
+.image .hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(79, 172, 254, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: .5s;
+    opacity: 0;
+}
+
+.image:hover .hover {
+    opacity: 1;
+}
+
+.hover.active {
+    opacity: 1;
+}
+
+.presentationname {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1;
+    margin: 5px;
+}
+
+
+.content {
+    display: flex;
+
+}
+
+.contentaboutme {
+    display: flex;
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.aboutmetitle {
+    position: relative;
+    color: #555;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0 0 3px 0;
+    margin-bottom: .9rem;
+    display: inline-block;
+}
+
+
+
+.aboutmetitle:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 50%;
+    background-color: #555;
+    bottom: 0;
+    left: 0;
+}
+
+.presentation {
+    color: #666;
+    font-size: 12px;
+}
+
+
+
+
+/*CSS for secondary container*/
+.titlesecondarycontainer {
+    font-size: 2.5rem;
+    color: rgba(79, 172, 254, .7);
+    font-weight: 500;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 5%;
+    font-family: Rancho;
+
+}
+
+.secondarycontainercard {
+    max-width: 950px;
+    width: 100%;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.secondarycontainercard .main-card {
+    display: flex;
+    justify-content: space-evenly;
+    width: 200%;
+    transition: 1s;
+}
+
+#two:checked~.main-card {
+    margin-left: -100%;
+}
+
+.secondarycontainercard .main-card .cards {
+    width: calc(100% / 2 - 10px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    justify-content: space-between;
+}
+
+/*Cards effects class*/
+.main-card .cards .card {
+    width: calc(100% / 2 - 10px);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+}
+
+/*Class that allows the effect of lifting the cards when mouse goes over them*/
+.main-card .cards .card:hover {
+    transform: translateY(-15px);
+}
+
+/*Class for the stlye of the cards content*/
+.cards .card .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.cards .card .content .imgcard {
+    height: 100%;
+    width: 100%;
+
+}
+
+.cards .card .content .imgcard .capa {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 103, 123, 0.7);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+    border-radius: 8px
+}
+
+
+.cards .card .content .imgcard:hover>.capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cards .card .content .imgcard:hover>.capa h3 {
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+.cards .card .content .imgcard .capa h3 {
+    color: #fff;
+    font-weight: 400;
+    transition: all 400ms ease-out;
+}
+
+.cards .card .content .imgcard .capa p {
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 90%;
+    margin: auto;
+}
+
+.card .content .imgcard img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card .content .namecard {
+
+    color: black;
+    font-size: 14px;
+    line-height: 1;
+    margin: 2%;
+}
+
+
+
+/* CSS for the sliders' buttons*/
+.secondarycontainercard .button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.button label {
+    height: 15px;
+    width: 15px;
+    border-radius: 20px;
+    background: #fff;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.button label.active {
+    width: 35px;
+}
+
+#one:checked~.button .one {
+    width: 35px;
+}
+
+#one:checked~.button .two {
+    width: 15px;
+}
+
+#two:checked~.button .one {
+    width: 15px;
+}
+
+#two:checked~.button .two {
+    width: 35px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+
+
+/************************Media Query************************/
+
+/*Main container - Media query */
+
+@media (max-width: 600px) {
+
+    .maincontainer {
+        grid-template-columns: 1fr;
+    }
+
+    .maincontainer::before {
+        content: '';
+        width: 100%;
+        background: #f2f2f2;
+        clip-path: inset(0 0 70% 0);
+        z-index: -1;
+        height: 100%;
+    }
+}
+
+
+/*Primary container  - Media query */
+
+
+@media (max-width: 510px) {
+    .contentaboutme {
+        flex-direction: column;
+    }
+
+    .primarycontainerpresentation {
+        min-height: 0;
+
+    }
+}
+
+@media (max-width: 470px) {
+    .presentationheader {
+        height: 230px;
+    }
+
+    .presentationcard:before {
+        clip-path: circle(400px at 50% -74.5%);
+        height: 230px;
+    }
+
+    .main .image {
+        width: 90px;
+        height: 90px;
+        border-width: 3px;
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .contentaboutme {
+        padding: 1.2rem 1.8rem 1.8rem 1.8rem;
+    }
+
+    .aboutmetitle {
+        font-size: .9rem;
+        margin-bottom: .5rem;
+    }
+
+    .presentation {
+        font-size: .8rem;
+    }
+
+}
+
+
+/*Secondary container - Media query */
+
+@media (max-width: 768px) {
+    .main-card .cards .card {
+        margin: 20px 0 10px 0;
+        width: 100%;
+    }
+
+    .secondarycontainercard {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-card .cards .card {
+        width: 100%;
+    }
+
+}
+
+
+
+
+/* Modal Window */
+
+.pop-up {
+    background: rgba(48, 48, 48, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.pop-up-wrap {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    max-width: 850px;
+    transform: scale(0.6);
+    opacity: 0;
+    transition: .3s ease all;
+}
+
+
+.sub-content .image2 {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: url('https://i.postimg.cc/SQ5MZWc3/photo-2022-10-19-12-48-31.jpg') no-repeat center / cover;
+    border: 4px solid #00d8fe;
+    margin-bottom: 2px;
+    overflow: hidden;
+    display: inline-block;
+
+}
+
+.welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+
+.welcome {
+    background: #fff;
+    flex-basis: 0;
+    flex-grow: 2;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+
+
+.sub-content h2 {
+    font-weight: 500;
+    font-size: 40px;
+    color: #1F4068;
+    margin-bottom: 15px;
+}
+
+.sub-content p {
+    font-weight: 500;
+    color: #1bc59b;
+    margin-bottom: 30px;
+}
+
+
+.line {
+    width: 100%;
+    height: 20px;
+    background-image: linear-gradient(to top, #00f2fe, #4facfe);
+
+}
+
+#close {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    font-size: 25px;
+    color: #00f2fe;
+    cursor: pointer;
+}
+
+.pop-up.show {
+    visibility: visible;
+}
+
+.pop-up-wrap.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+@media only screen and (max-width: 320px) {
+    .sub-content h2 {
+        font-size: 30px;
+    }
+
+}
